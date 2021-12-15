@@ -3,6 +3,8 @@ import { NestjsQueryGraphQLModule } from '@nestjs-query/query-graphql';
 import { NestjsQueryTypeOrmModule } from '@nestjs-query/query-typeorm';
 import { EstadoEntity } from './entities/estado.entity';
 import { EstadoType } from './entities/estado.type';
+import { CreateEstadoInput } from './dto/create-estado.input';
+import { UpdateEstadoInput } from './dto/update-estado.input';
 
 @Module({
   imports: [
@@ -12,9 +14,8 @@ import { EstadoType } from './entities/estado.type';
         {
           DTOClass: EstadoType,
           EntityClass: EstadoEntity,
-          create: { disabled: true },
-          update: { disabled: true },
-          delete: { disabled: true },
+          CreateDTOClass: CreateEstadoInput,
+          UpdateDTOClass: UpdateEstadoInput,
         },
       ],
     }),
