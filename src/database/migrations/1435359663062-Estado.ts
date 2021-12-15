@@ -6,9 +6,10 @@ export class Estado1435359663062 implements MigrationInterface {
     columns: [
       {
         name: 'id',
-        type: 'varchar',
-        length: '100',
-        isUnique: true,
+        type: 'uuid',
+        isPrimary: true,
+        generationStrategy: 'uuid',
+        default: 'uuid_generate_v4()',
       },
       {
         name: 'nome',
