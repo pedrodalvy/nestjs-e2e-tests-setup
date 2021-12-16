@@ -1,13 +1,8 @@
-import { BeforeInsert, Column, Entity, PrimaryColumn } from 'typeorm';
-import { v4 as uuidv4 } from 'uuid';
+import { Column, Entity, PrimaryColumn } from 'typeorm';
+import { BaseEntity } from '../../../commons/entitities/base.entity';
 
 @Entity('estados')
-export class EstadoEntity {
-  @BeforeInsert()
-  setId() {
-    this.id = uuidv4();
-  }
-
+export class EstadoEntity extends BaseEntity {
   @PrimaryColumn()
   id: string;
 
