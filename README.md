@@ -34,3 +34,11 @@ $ yarn start:prod
 # e2e tests
 $ npm run test:e2e
 ```
+
+## Tecnologias Utilizadas
+- [NestJS](https://nestjs.com/)
+- [GraphQL](https://graphql.org/)
+- [Nestjs-query](https://doug-martin.github.io/nestjs-query/)
+- [TypeORM](https://www.nestjs.com/docs/typeorm)
+- [TypeORM Test Transactions](https://github.com/entrostat/typeorm-test-transactions)
+- [Typeorm Factory](https://github.com/linnify/typeorm-factory)
