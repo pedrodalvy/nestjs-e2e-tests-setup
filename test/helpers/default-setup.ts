@@ -2,7 +2,6 @@ import { Test, TestingModule } from '@nestjs/testing';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { AppModule } from '../../src/app.module';
 import { INestApplication, ValidationPipe } from '@nestjs/common';
-import { getConnection } from 'typeorm';
 import * as ormConfig from '../../src/config/orm.config';
 
 export const beforeAllDefault = async (): Promise<INestApplication> => {
@@ -12,9 +11,6 @@ export const beforeAllDefault = async (): Promise<INestApplication> => {
 
   const app = moduleFixture.createNestApplication();
   app.useGlobalPipes(new ValidationPipe({ transform: true }));
-
-  const connection = await getConnection();
-  await connection.runMigrations();
 
   return app.init();
 };

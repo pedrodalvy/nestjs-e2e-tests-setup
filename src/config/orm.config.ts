@@ -17,6 +17,7 @@ const ormConfig: TypeOrmModuleOptions = {
 const ormTestConfig: TypeOrmModuleOptions = {
   type: 'sqlite',
   database: `:memory:`,
+  migrationsRun: true,
   entities: [path.resolve(__dirname, '..', '**', '*.entity{.ts,.js}')],
   migrations: [
     path.resolve(__dirname, '..', 'database', 'migrations', '*{.ts,.js}'),
